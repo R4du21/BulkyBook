@@ -71,7 +71,7 @@ public class ProductController : Controller
                 {
                     file.CopyTo(fileStreams);
                 }
-                obj.Product.ImageUrl = @"\images\products\" + fileName + extension; //what will be saved in DB
+                obj.Product.ImageUrl = @"\images\products\" + fileName + extension; //what will be saved in Db
             }
             _unitOfWork.Product.Add(obj.Product);
             _unitOfWork.Save();
