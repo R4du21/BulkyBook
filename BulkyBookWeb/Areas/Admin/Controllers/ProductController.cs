@@ -19,14 +19,13 @@ public class ProductController : Controller
 
     public IActionResult Index()
     {
-        IEnumerable<Product> objProduct = _unitOfWork.Product.GetAll();
-        return View(objProduct);
+        return View();
     }
 
     //GET - Upsert
     public IActionResult Upsert(int? id)
     {
-        ProductVM productVM = new()
+        ProductVM productVM = new() //view model for dropdown
         {
             Product = new(),
             CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
@@ -47,6 +46,8 @@ public class ProductController : Controller
         }
         else
         {
+            productVM.Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+            return View(productVM);
             //update product
         }
 
@@ -67,46 +68,63 @@ public class ProductController : Controller
                 var uploads = Path.Combine(wwwRoothPath, @"images\products"); //final location for the file
                 var extension = Path.GetExtension(file.FileName); //getting the file extension from the filename
 
+                if(obj.Product.ImageUrl != null)
+                {
+                    var oldImagePath = Path.Combine(wwwRoothPath, obj.Product.ImageUrl.TrimStart('\\'));
+                    if(System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+
                 using (var fileStreams = new FileStream(Path.Combine(uploads,fileName+extension),FileMode.Create)) //copying the final file
                 {
                     file.CopyTo(fileStreams);
                 }
                 obj.Product.ImageUrl = @"\images\products\" + fileName + extension; //what will be saved in Db
             }
-            _unitOfWork.Product.Add(obj.Product);
+            if(obj.Product.Id == 0) //adding product
+            {
+                _unitOfWork.Product.Add(obj.Product);
+            }
+            else
+            {
+                _unitOfWork.Product.Update(obj.Product);
+            }
             _unitOfWork.Save();
             TempData["success"] = "Product created successfully!";
             return RedirectToAction("Index");
         }
-        return View(obj.Product);
+        return View(obj);
     }
 
-    //GET - Remove
-    public IActionResult Remove(int? id)
+    #region API CALLS
+    [HttpGet]
+    public IActionResult GetAll()
     {
-        if (id == null || id == 0)
-        {
-            return NotFound();
-        }
-
-        var coverTypeFromDbFirst = _unitOfWork.CoverType.GetFirstOrDefault(u => u.Id == id);
-
-        if (coverTypeFromDbFirst == null)
-        {
-            return NotFound();
-        }
-
-        return View(coverTypeFromDbFirst);
+        var productList = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
+        return Json(new { data = productList });
     }
 
-    //POST - Remove
-    [HttpPost]
+    [HttpDelete]
     [ValidateAntiForgeryToken]
-    public IActionResult Remove(CoverType obj)
+    public IActionResult Delete(int? id)
     {
-        _unitOfWork.CoverType.Remove(obj);
+        var obj = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+        if(obj == null)
+        {
+            return Json(new { succes = false, message = "Error while deleting" });
+        }
+
+        var oldImagePath = Path.Combine(_hostEnvironment.WebRootPath, obj.ImageUrl.TrimStart('\\'));
+        if (System.IO.File.Exists(oldImagePath))
+        {
+            System.IO.File.Delete(oldImagePath);
+        }
+
+        _unitOfWork.Product.Remove(obj);
         _unitOfWork.Save();
-        TempData["success"] = "Cover type removed successfully!";
-        return RedirectToAction("Index");
+        return Json(new { succes = true, message = "Delete successful" });
     }
+    #endregion
 }
