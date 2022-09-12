@@ -52,15 +52,15 @@
             <input type="file" id="uploadBox" name="file" asp-for="Product.ImageUrl" class="form-control" />
         </div>
         <div class="mb-3 col-6">
-            <label asp-for="Product.Category"></label>
-            <select asp-for="Product.Category" asp-items="@Model.CategoryList" class="form-select">
+            <label asp-for="Product.CategoryId"></label>
+            <select asp-for="Product.CategoryId" asp-items="@Model.CategoryList" class="form-select">
                 <option disabled selected>--Select Category--</option>
             </select>
             <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
         </div>
         <div class="mb-3 col-6">
-            <label asp-for="Product.CoverType"></label>
-            <select asp-for="Product.CoverType" asp-items="@Model.CoverTypeList" class="form-select">
+            <label asp-for="Product.CoverTypeId"></label>
+            <select asp-for="Product.CoverTypeId" asp-items="@Model.CoverTypeList" class="form-select">
                 <option disabled selected>--Select CoverType--</option>
             </select>
             <span asp-validation-for="Product.CoverTypeId" class="text-danger"></span>
