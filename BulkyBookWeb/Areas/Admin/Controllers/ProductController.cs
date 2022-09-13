@@ -107,7 +107,6 @@ public class ProductController : Controller
     }
 
     [HttpDelete]
-    [ValidateAntiForgeryToken]
     public IActionResult Delete(int? id)
     {
         var obj = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);

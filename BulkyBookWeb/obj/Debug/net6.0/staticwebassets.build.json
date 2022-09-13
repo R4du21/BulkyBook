@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HfpWGt1fu3+uu+EEaVz/8TnM/JhHp2wWfnCxuLzYKI4=",
+  "Hash": "a2vAJbMk1TF2lYH1LYvEif7HKJxJr5NiskZDYo0pHlg=",
   "Source": "BulkyBookWeb",
   "BasePath": "_content/BulkyBookWeb",
   "Mode": "Default",
@@ -117,40 +117,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\9057a519-d895-48c0-b362-d6bf36307677.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\images\\products\\b5596c4f-14ee-4c9e-815b-8b52e5e2b656.jpg",
-      "SourceId": "BulkyBookWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\",
-      "BasePath": "_content/BulkyBookWeb",
-      "RelativePath": "images/products/b5596c4f-14ee-4c9e-815b-8b52e5e2b656.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\b5596c4f-14ee-4c9e-815b-8b52e5e2b656.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\images\\products\\ea9c50d6-357a-4134-96a0-f75b1d37b558.jpg",
-      "SourceId": "BulkyBookWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\",
-      "BasePath": "_content/BulkyBookWeb",
-      "RelativePath": "images/products/ea9c50d6-357a-4134-96a0-f75b1d37b558.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\ea9c50d6-357a-4134-96a0-f75b1d37b558.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\js\\product.js",
