@@ -3126,7 +3126,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.EntityFrameworkCore": "6.0.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.9"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.9",
+          "Microsoft.Extensions.Identity.Stores": "6.0.9"
         },
         "runtime": {
           "BulkyBook.Models.dll": {}
