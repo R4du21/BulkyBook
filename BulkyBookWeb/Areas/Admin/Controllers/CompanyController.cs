@@ -35,8 +35,6 @@ public class CompanyController : Controller
             return View(company);
             //update product
         }
-
-        return View(company);
     }
 
     //POST - Upsert

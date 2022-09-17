@@ -50,8 +50,6 @@ public class ProductController : Controller
             return View(productVM);
             //update product
         }
-
-        return View(productVM);
     }
 
     //POST - Upsert
