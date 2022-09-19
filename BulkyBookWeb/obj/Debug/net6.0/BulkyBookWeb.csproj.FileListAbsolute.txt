@@ -571,3 +571,6 @@ C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.Ope
 C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\MailKit.dll
+C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\MimeKit.dll
+C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BouncyCastle.Crypto.dll
